@@ -1,6 +1,6 @@
 function Contact() {
   return (
-    <article className='flex flex-row gap-4 p-4 bg-white first:mt-2 last:mb-2 last:border-none border-b cursor-pointer'>
+    <article className='flex flex-row gap-4 p-4 bg-white last:mb-2 last:border-none border-b cursor-pointer'>
       <div className='flex flex-row items-center justify-between w-full'>
         <div className='flex flex-row items-center gap-4'>
           <div className='h-12 w-12 bg-gray-400 rounded overflow-hidden'>
