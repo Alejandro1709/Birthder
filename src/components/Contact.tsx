@@ -12,7 +12,7 @@ function Contact() {
           </div>
         </div>
         <button className='p-2 bg-indigo-500 rounded-md text-white hover:bg-indigo-600 transition-all'>
-          Saludate
+          Congratulate
         </button>
       </div>
     </article>
