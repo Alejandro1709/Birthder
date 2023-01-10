@@ -7,7 +7,7 @@ type Props = {
 
 function Contacts({ contacts }: Props) {
   return (
-    <div className='flex flex-col h-full p-4 overflow-scroll'>
+    <div className='flex flex-col h-full overflow-scroll'>
       {contacts.map((contact) => (
         <Contact key={contact.id} contact={contact} />
       ))}
