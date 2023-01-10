@@ -5,4 +5,5 @@ export default interface Contact {
   phone: string;
   avatar: string;
   birthday: string;
+  gender: 'Male' | 'Female';
 }

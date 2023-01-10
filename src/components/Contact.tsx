@@ -8,6 +8,8 @@ type Props = {
 function Contact({ contact }: Props) {
   const daysLeft = countdown(contact.birthday);
 
+  const pronouns = contact.gender === 'Male' ? 'his' : 'her';
+
   return (
     <article className='flex flex-row gap-4 p-4 bg-white last:mb-2 last:border-none border-b cursor-pointer'>
       <div className='flex flex-row items-center justify-between w-full'>
@@ -17,10 +19,14 @@ function Contact({ contact }: Props) {
           </div>
           <div className='flex flex-col gap-0.5'>
             <h2 className='text-lg font-bold'>{contact.name}</h2>
-            <p>
-              {daysLeft} {daysLeft <= 1 ? 'day' : 'days'} left until his
-              birthday
-            </p>
+            {daysLeft !== 0 ? (
+              <p>
+                {daysLeft} {daysLeft <= 1 ? 'day' : 'days'} left until{' '}
+                <span>{pronouns} birthday</span>
+              </p>
+            ) : (
+              <p>Happy Birthday!!!</p>
+            )}
           </div>
         </div>
         {daysLeft === 0 ? (

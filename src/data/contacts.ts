@@ -8,6 +8,7 @@ const contacts: Contact[] = [
     phone: '555-555-5555',
     avatar: 'https://i.pravatar.cc/300',
     birthday: '1990-01-01',
+    gender: 'Male',
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const contacts: Contact[] = [
     phone: '222-222-2222',
     avatar: 'https://i.pravatar.cc/300',
     birthday: '1990-01-01',
+    gender: 'Female',
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ const contacts: Contact[] = [
     phone: '333-333-3333',
     avatar: 'https://i.pravatar.cc/300',
     birthday: '1997-11-11',
+    gender: 'Male',
   },
   {
     id: 4,
@@ -32,6 +35,7 @@ const contacts: Contact[] = [
     phone: '444-444-4444',
     avatar: 'https://i.pravatar.cc/300',
     birthday: '1988-12-01',
+    gender: 'Male',
   },
   {
     id: 5,
@@ -40,6 +44,7 @@ const contacts: Contact[] = [
     phone: '555-555-5555',
     avatar: 'https://i.pravatar.cc/300',
     birthday: '1988-12-01',
+    gender: 'Male',
   },
   {
     id: 6,
@@ -48,6 +53,7 @@ const contacts: Contact[] = [
     phone: '666-666-6666',
     avatar: 'https://i.pravatar.cc/300',
     birthday: '1971-12-26',
+    gender: 'Male',
   },
   {
     id: 7,
@@ -56,6 +62,7 @@ const contacts: Contact[] = [
     phone: '777-777-7777',
     avatar: 'https://i.pravatar.cc/300',
     birthday: '1972-01-15',
+    gender: 'Male',
   },
   {
     id: 8,
@@ -64,6 +71,7 @@ const contacts: Contact[] = [
     phone: '888-888-8888',
     avatar: 'https://i.pravatar.cc/300',
     birthday: '1975-11-14',
+    gender: 'Male',
   },
   {
     id: 9,
@@ -72,6 +80,7 @@ const contacts: Contact[] = [
     phone: '999-999-9999',
     avatar: 'https://i.pravatar.cc/300',
     birthday: '1975-12-13',
+    gender: 'Male',
   },
   {
     id: 10,
@@ -80,6 +89,7 @@ const contacts: Contact[] = [
     phone: '101-010-1010',
     avatar: 'https://i.pravatar.cc/300',
     birthday: '1976-01-24',
+    gender: 'Male',
   },
 ];
 
