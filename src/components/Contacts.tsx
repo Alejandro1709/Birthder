@@ -1,22 +1,16 @@
+import type IContact from '../types/contact';
 import Contact from './Contact';
 
-function Contacts() {
+type Props = {
+  contacts: IContact[];
+};
+
+function Contacts({ contacts }: Props) {
   return (
     <div className='flex flex-col h-full p-4 overflow-scroll'>
-      <Contact />
-      <Contact />
-      <Contact />
-      <Contact />
-      <Contact />
-      <Contact />
-      <Contact />
-      <Contact />
-      <Contact />
-      <Contact />
-      <Contact />
-      <Contact />
-      <Contact />
-      <Contact />
+      {contacts.map((contact) => (
+        <Contact key={contact.id} contact={contact} />
+      ))}
     </div>
   );
 }

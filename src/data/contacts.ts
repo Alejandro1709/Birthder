@@ -6,7 +6,7 @@ const contacts: Contact[] = [
     name: 'John Doe',
     email: 'johndoe@mail.com',
     phone: '555-555-5555',
-    avatar: 'https://randomuser.me/api/portraits',
+    avatar: 'https://i.pravatar.cc/300',
     birthday: '1990-01-01',
   },
   {
@@ -14,7 +14,7 @@ const contacts: Contact[] = [
     name: 'Jane Doe',
     email: 'jandedoe@mail.com',
     phone: '222-222-2222',
-    avatar: 'https://randomuser.me/api/portraits',
+    avatar: 'https://i.pravatar.cc/300',
     birthday: '1990-01-01',
   },
   {
@@ -22,7 +22,7 @@ const contacts: Contact[] = [
     name: 'Jonathan Wexler',
     email: 'wexler@gmail.com',
     phone: '333-333-3333',
-    avatar: 'https://randomuser.me/api/portraits',
+    avatar: 'https://i.pravatar.cc/300',
     birthday: '1997-11-11',
   },
   {
@@ -30,7 +30,7 @@ const contacts: Contact[] = [
     name: 'Tyler Joseph',
     email: 'tyler@twentyonepilots.com',
     phone: '444-444-4444',
-    avatar: 'https://randomuser.me/api/portraits',
+    avatar: 'https://i.pravatar.cc/300',
     birthday: '1988-12-01',
   },
   {
@@ -38,7 +38,7 @@ const contacts: Contact[] = [
     name: 'Joshua Dun',
     email: 'joshua@twentyonepilots.com',
     phone: '555-555-5555',
-    avatar: 'https://randomuser.me/api/portraits',
+    avatar: 'https://i.pravatar.cc/300',
     birthday: '1988-12-01',
   },
   {
@@ -46,7 +46,7 @@ const contacts: Contact[] = [
     name: 'Jared Leto',
     email: 'jared@leto.com',
     phone: '666-666-6666',
-    avatar: 'https://randomuser.me/api/portraits',
+    avatar: 'https://i.pravatar.cc/300',
     birthday: '1971-12-26',
   },
   {
@@ -54,7 +54,7 @@ const contacts: Contact[] = [
     name: 'Mark Hoppus',
     email: 'hoppus.m@hotmail.com',
     phone: '777-777-7777',
-    avatar: 'https://randomuser.me/api/portraits',
+    avatar: 'https://i.pravatar.cc/300',
     birthday: '1972-01-15',
   },
   {
@@ -62,7 +62,7 @@ const contacts: Contact[] = [
     name: 'Travis Barker',
     email: 'barker@woof.com',
     phone: '888-888-8888',
-    avatar: 'https://randomuser.me/api/portraits',
+    avatar: 'https://i.pravatar.cc/300',
     birthday: '1975-11-14',
   },
   {
@@ -70,7 +70,7 @@ const contacts: Contact[] = [
     name: 'Tom Delonge',
     email: 'tom@mail.com',
     phone: '999-999-9999',
-    avatar: 'https://randomuser.me/api/portraits',
+    avatar: 'https://i.pravatar.cc/300',
     birthday: '1975-12-13',
   },
   {
@@ -78,7 +78,7 @@ const contacts: Contact[] = [
     name: 'Matt Skiba',
     email: 'mark@mail.com',
     phone: '101-010-1010',
-    avatar: 'https://randomuser.me/api/portraits',
+    avatar: 'https://i.pravatar.cc/300',
     birthday: '1976-01-24',
   },
 ];
