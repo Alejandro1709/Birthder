@@ -1,6 +1,14 @@
 export const countdown = (date: string) => {
   // calculate how many days until the birthday
-  const birthday = new Date(date);
+  const fixedBirthday = date.split('-')[1].startsWith('0')
+    ? date.split('-')[1].replace('0', '')
+    : date.split('-')[1];
+
+  const fixedDate = `${date.split('-')[0]}-${fixedBirthday}-${
+    date.split('-')[2]
+  }`;
+
+  const birthday = new Date(fixedDate);
   const today = new Date();
   const nextBirthday = new Date();
 

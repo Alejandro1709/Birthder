@@ -14,8 +14,11 @@ function Contact({ contact }: Props) {
     <article className='flex flex-row gap-4 p-4 bg-white last:border-none border-b cursor-pointer'>
       <div className='flex flex-row items-center justify-between w-full'>
         <div className='flex flex-row items-center gap-4'>
-          <div className='h-12 w-12 bg-gray-400 rounded overflow-hidden'>
-            <img src={contact.avatar} alt='avatar' />
+          <div className='h-12 w-12 rounded overflow-hidden'>
+            <img
+              src={`https://unavatar.io/gravatar/${contact.email}?fallback=https://i.pravatar.cc/150?img=${contact.id}`}
+              alt='avatar'
+            />
           </div>
           <div className='flex flex-col gap-0.5'>
             <h2 className='text-lg font-bold'>{contact.name}</h2>
@@ -25,7 +28,7 @@ function Contact({ contact }: Props) {
                 <span>{pronouns} birthday</span>
               </p>
             ) : (
-              <p>Happy Birthday!!!</p>
+              <p>🎉 Happy Birthday!!!</p>
             )}
           </div>
         </div>
