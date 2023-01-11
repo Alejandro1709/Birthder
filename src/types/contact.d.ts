@@ -3,7 +3,6 @@ export default interface Contact {
   name: string;
   email: string;
   phone: string;
-  avatar: string;
   birthday: string;
   gender: 'Male' | 'Female';
 }
