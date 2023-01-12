@@ -1,7 +1,14 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
+import type IContact from '../types/contact';
 import Searchbar from './Searchbar';
 
-function Header() {
+type HeaderProps = {
+  initialContacts: IContact[];
+  onContactsChange: React.Dispatch<React.SetStateAction<IContact[]>>;
+};
+
+function Header({ initialContacts, onContactsChange }: HeaderProps) {
   return (
     <header className='flex flex-col gap-4 p-4 bg-indigo-400 select-none'>
       <div className='flex flex-row justify-between items-center'>
@@ -15,7 +22,10 @@ function Header() {
           Add
         </NavLink>
       </div>
-      <Searchbar />
+      <Searchbar
+        contacts={initialContacts}
+        onContactsChange={onContactsChange}
+      />
     </header>
   );
 }

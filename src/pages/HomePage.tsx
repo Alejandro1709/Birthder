@@ -1,8 +1,12 @@
 import Contacts from '../components/Contacts';
-import contacts from '../data/contacts';
+import type IContact from '../types/contact';
 
-function HomePage() {
-  return <Contacts contacts={contacts} />;
+type HomePageProps = {
+  initialContacts: IContact[];
+};
+
+function HomePage({ initialContacts }: HomePageProps) {
+  return <Contacts contacts={initialContacts} />;
 }
 
 export default HomePage;
