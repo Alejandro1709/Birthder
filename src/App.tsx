@@ -8,7 +8,19 @@ import CreateContactPage from './pages/CreateContactPage';
 import type IContact from './types/contact';
 
 function App() {
-  const [initialContacts, setInitialContacts] = useState<IContact[]>(contacts);
+  const [input, setInput] = useState('');
+  const [filteredContacts, setFilteredContacts] =
+    useState<IContact[]>(contacts);
+
+  const handleContactSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+
+    const filtered = contacts.filter((contact) =>
+      contact.name.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+
+    setFilteredContacts(filtered);
+  };
 
   useLockBodyScroll();
 
@@ -16,13 +28,14 @@ function App() {
     <main className='md:flex flex-col md:h-screen justify-center items-center bg-slate-100 transition-all'>
       <section className='md:w-[680px] bg-white md:shadow-md md:rounded-md overflow-hidden'>
         <Header
-          initialContacts={initialContacts}
-          onContactsChange={setInitialContacts}
+          initialContacts={filteredContacts}
+          input={input}
+          onContactsChange={handleContactSearch}
         />
         <Routes>
           <Route
             path='/'
-            element={<HomePage initialContacts={initialContacts} />}
+            element={<HomePage initialContacts={filteredContacts} />}
           />
           <Route path='/contacts/new' element={<CreateContactPage />} />
           <Route path='*' element={<h1>404</h1>} />

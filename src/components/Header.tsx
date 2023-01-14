@@ -5,10 +5,11 @@ import Searchbar from './Searchbar';
 
 type HeaderProps = {
   initialContacts: IContact[];
-  onContactsChange: React.Dispatch<React.SetStateAction<IContact[]>>;
+  input: string;
+  onContactsChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-function Header({ initialContacts, onContactsChange }: HeaderProps) {
+function Header({ initialContacts, input, onContactsChange }: HeaderProps) {
   return (
     <header className='flex flex-col gap-4 p-4 bg-indigo-400 select-none'>
       <div className='flex flex-row justify-between items-center'>
@@ -24,6 +25,7 @@ function Header({ initialContacts, onContactsChange }: HeaderProps) {
       </div>
       <Searchbar
         contacts={initialContacts}
+        input={input}
         onContactsChange={onContactsChange}
       />
     </header>
