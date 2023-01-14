@@ -22,6 +22,10 @@ function App() {
     setFilteredContacts(filtered);
   };
 
+  const handleAddContact = (newContact: IContact) => {
+    setFilteredContacts((prev) => [...prev, newContact]);
+  };
+
   useLockBodyScroll();
 
   return (
@@ -37,7 +41,10 @@ function App() {
             path='/'
             element={<HomePage initialContacts={filteredContacts} />}
           />
-          <Route path='/contacts/new' element={<CreateContactPage />} />
+          <Route
+            path='/contacts/new'
+            element={<CreateContactPage onContactCreation={handleAddContact} />}
+          />
           <Route path='*' element={<h1>404</h1>} />
         </Routes>
       </section>

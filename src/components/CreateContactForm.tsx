@@ -1,14 +1,21 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import type IContact from '../types/contact';
 
-function CreateContactForm() {
-  const [data, setData] = useState({
+type CreateContactFormProps = {
+  onContactCreation: (newContact: IContact) => void;
+};
+
+function CreateContactForm({ onContactCreation }: CreateContactFormProps) {
+  const [data, setData] = useState<IContact>({
     name: '',
     email: '',
     phone: '',
-    avatar: '',
     gender: '',
     birthday: '',
   });
+
+  const router = useNavigate();
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -21,7 +28,17 @@ function CreateContactForm() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log(data);
+    const newContact: IContact = {
+      id: Math.floor(Math.random() * 1000000),
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      birthday: data.birthday,
+      gender: data.gender,
+    };
+
+    onContactCreation(newContact);
+    router('/');
   };
 
   return (
@@ -65,19 +82,6 @@ function CreateContactForm() {
           className='p-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500'
           placeholder='555-555-555'
           value={data.phone}
-          onChange={handleChange}
-        />
-      </div>
-      <div className='flex flex-col gap-1'>
-        <label htmlFor='avatar' className='text-gray-800'>
-          Avatar:
-        </label>
-        <input
-          type='file'
-          name='avatar'
-          id='avatar'
-          className='p-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500'
-          value={data.avatar}
           onChange={handleChange}
         />
       </div>
