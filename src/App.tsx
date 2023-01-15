@@ -26,6 +26,15 @@ function App() {
     setFilteredContacts((prev) => [...prev, newContact]);
   };
 
+  const handleApplyFilterContacts = (filter: string) => {
+    if (filter === 'Name') {
+      const filtered = filteredContacts.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      setFilteredContacts(filtered);
+    } else return;
+  };
+
   useLockBodyScroll();
 
   return (
@@ -35,6 +44,7 @@ function App() {
           initialContacts={filteredContacts}
           input={input}
           onContactsChange={handleContactSearch}
+          onFilter={handleApplyFilterContacts}
         />
         <Routes>
           <Route

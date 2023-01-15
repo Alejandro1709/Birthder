@@ -7,9 +7,15 @@ type HeaderProps = {
   initialContacts: IContact[];
   input: string;
   onContactsChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onFilter: (filter: string) => void;
 };
 
-function Header({ initialContacts, input, onContactsChange }: HeaderProps) {
+function Header({
+  initialContacts,
+  input,
+  onFilter,
+  onContactsChange,
+}: HeaderProps) {
   return (
     <header className='flex flex-col gap-4 p-4 bg-indigo-400 select-none'>
       <div className='flex flex-row justify-between items-center'>
@@ -27,6 +33,7 @@ function Header({ initialContacts, input, onContactsChange }: HeaderProps) {
         contacts={initialContacts}
         input={input}
         onContactsChange={onContactsChange}
+        onFilter={onFilter}
       />
     </header>
   );
