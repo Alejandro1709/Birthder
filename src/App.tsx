@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useContactsStore } from './stores/contactsStore';
 import contacts from './data/contacts';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
@@ -9,8 +10,8 @@ import type IContact from './types/contact';
 
 function App() {
   const [input, setInput] = useState('');
-  const [filteredContacts, setFilteredContacts] =
-    useState<IContact[]>(contacts);
+
+  const state = useContactsStore();
 
   const handleContactSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
@@ -19,19 +20,19 @@ function App() {
       contact.name.toLowerCase().includes(e.target.value.toLowerCase())
     );
 
-    setFilteredContacts(filtered);
+    state.setContacts(filtered);
   };
 
   const handleAddContact = (newContact: IContact) => {
-    setFilteredContacts((prev) => [...prev, newContact]);
+    state.setContacts([...state.initialContacts, newContact]);
   };
 
   const handleApplyFilterContacts = (filter: string) => {
     if (filter === 'Name') {
-      const filtered = filteredContacts.sort((a, b) =>
+      const filtered = state.initialContacts.sort((a, b) =>
         a.name.localeCompare(b.name)
       );
-      setFilteredContacts(filtered);
+      state.setContacts(filtered);
     } else return;
   };
 
@@ -41,7 +42,7 @@ function App() {
     <main className='md:flex flex-col md:h-screen justify-center items-center bg-slate-100 transition-all'>
       <section className='md:w-[680px] bg-white md:shadow-md md:rounded-md overflow-hidden'>
         <Header
-          initialContacts={filteredContacts}
+          initialContacts={state.initialContacts}
           input={input}
           onContactsChange={handleContactSearch}
           onFilter={handleApplyFilterContacts}
@@ -49,7 +50,7 @@ function App() {
         <Routes>
           <Route
             path='/'
-            element={<HomePage initialContacts={filteredContacts} />}
+            element={<HomePage initialContacts={state.initialContacts} />}
           />
           <Route
             path='/contacts/new'
