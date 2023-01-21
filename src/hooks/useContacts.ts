@@ -40,6 +40,7 @@ function useContacts() {
   return {
     input,
     initialContacts,
+    setContacts,
     handleContactSearch,
     handleAddContact,
     handleApplyFilterContacts,
