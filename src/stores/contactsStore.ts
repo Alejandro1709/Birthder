@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import contacts from '../data/contacts';
 import type IContact from '../types/contact';
 
 type ContactsStore = {
@@ -8,6 +7,6 @@ type ContactsStore = {
 };
 
 export const useContactsStore = create<ContactsStore>((set) => ({
-  initialContacts: contacts,
+  initialContacts: [],
   setContacts: (contacts) => set({ initialContacts: contacts }),
 }));

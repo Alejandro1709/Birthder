@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useContactsStore } from './stores/contactsStore';
 import { shallow } from 'zustand/shallow';
-import contacts from './data/contacts';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import useLockBodyScroll from './hooks/useLockBodyScroll';
@@ -23,7 +22,7 @@ function App() {
   const handleContactSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
 
-    const filtered = contacts.filter((contact) =>
+    const filtered = initialContacts.filter((contact) =>
       contact.name.toLowerCase().includes(e.target.value.toLowerCase())
     );
 
