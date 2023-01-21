@@ -1,11 +1,9 @@
 import Contacts from '../components/Contacts';
-import type IContact from '../types/contact';
+import useContacts from '../hooks/useContacts';
 
-type HomePageProps = {
-  initialContacts: IContact[];
-};
+function HomePage() {
+  const { initialContacts } = useContacts();
 
-function HomePage({ initialContacts }: HomePageProps) {
   return <Contacts contacts={initialContacts} />;
 }
 

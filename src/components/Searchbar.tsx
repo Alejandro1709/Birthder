@@ -1,26 +1,17 @@
 import { useState } from 'react';
-import type IContact from '../types/contact';
+import useContacts from '../hooks/useContacts';
 import Filter from './Filter';
 
-type SearchbarProps = {
-  contacts: IContact[];
-  input: string;
-  onContactsChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onFilter: (filter: string) => void;
-};
+function Searchbar() {
+  const { input, handleApplyFilterContacts, handleContactSearch } =
+    useContacts();
 
-function Searchbar({
-  contacts,
-  onFilter,
-  input,
-  onContactsChange,
-}: SearchbarProps) {
   const [isSelectOpen, setIsSelectOpen] = useState(false);
   const [currentFilter, setCurrentFilter] = useState('All');
 
   const handleApplyFilter = (e: React.MouseEvent<HTMLLIElement>) => {
     setCurrentFilter(e.currentTarget.innerText);
-    onFilter(currentFilter);
+    handleApplyFilterContacts(currentFilter);
     setIsSelectOpen(false);
   };
 
@@ -31,7 +22,7 @@ function Searchbar({
         type='text'
         placeholder='Search'
         value={input}
-        onChange={(e) => onContactsChange(e)}
+        onChange={(e) => handleContactSearch(e)}
       />
       <button
         className='p-[6px] bg-indigo-500 rounded-md text-white hover:bg-indigo-600 transition-all'

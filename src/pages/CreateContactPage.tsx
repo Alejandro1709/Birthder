@@ -1,15 +1,13 @@
 import CreateContactForm from '../components/CreateContactForm';
-import type IContact from '../types/contact';
+import useContacts from '../hooks/useContacts';
 
-type CreateContactPageProps = {
-  onContactCreation: (newContact: IContact) => void;
-};
+function CreateContactPage() {
+  const { handleAddContact } = useContacts();
 
-function CreateContactPage({ onContactCreation }: CreateContactPageProps) {
   return (
     <div className='p-4'>
       <h1 className='text-2xl font-bold text-gray-800'>Create Contact</h1>
-      <CreateContactForm onContactCreation={onContactCreation} />
+      <CreateContactForm onContactCreation={handleAddContact} />
     </div>
   );
 }
