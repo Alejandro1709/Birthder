@@ -8,7 +8,7 @@ type Props = {
 function Contact({ contact }: Props) {
   const daysLeft = countdown(contact.birthday);
 
-  const pronouns = contact.gender === 'Male' ? 'his' : 'her';
+  const pronouns = contact.gender === 'male' ? 'his' : 'her';
 
   return (
     <article className='flex flex-row gap-4 p-4 bg-white last:border-none border-b cursor-pointer'>

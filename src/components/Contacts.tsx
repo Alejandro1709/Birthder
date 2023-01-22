@@ -1,14 +1,18 @@
-import type IContact from '../types/contact';
+import { useEffect } from 'react';
+import useContacts from '../hooks/useContacts';
 import Contact from './Contact';
+import { getContacts } from '../services/contacts';
 
-type Props = {
-  contacts: IContact[];
-};
+function Contacts() {
+  const { initialContacts, setContacts } = useContacts();
 
-function Contacts({ contacts }: Props) {
+  useEffect(() => {
+    getContacts().then((contacts) => setContacts(contacts));
+  }, []);
+
   return (
     <div className='flex flex-col h-[570px] overflow-scroll'>
-      {contacts.map((contact) => (
+      {initialContacts.map((contact) => (
         <Contact key={contact.id} contact={contact} />
       ))}
     </div>
