@@ -7,7 +7,11 @@ function Contacts() {
   const { initialContacts, setContacts } = useContacts();
 
   useEffect(() => {
-    getContacts().then((contacts) => setContacts(contacts));
+    console.log('initialContacts', initialContacts);
+    getContacts().then((contacts) => {
+      localStorage.setItem('contacts', JSON.stringify(initialContacts));
+      setContacts(contacts);
+    });
   }, []);
 
   return (

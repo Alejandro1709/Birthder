@@ -21,6 +21,8 @@ function useContacts() {
       contact.name.toLowerCase().includes(e.target.value.toLowerCase())
     );
 
+    console.log(initialContacts === filtered);
+
     setContacts(filtered);
   };
 

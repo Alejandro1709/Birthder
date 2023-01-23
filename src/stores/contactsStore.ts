@@ -7,6 +7,6 @@ type ContactsStore = {
 };
 
 export const useContactsStore = create<ContactsStore>((set) => ({
-  initialContacts: [],
+  initialContacts: JSON.parse(localStorage.getItem('contacts') || '[]'),
   setContacts: (contacts) => set({ initialContacts: contacts }),
 }));
